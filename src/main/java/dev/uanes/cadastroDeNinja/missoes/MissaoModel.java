@@ -1,5 +1,6 @@
 package dev.uanes.cadastroDeNinja.missoes;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.uanes.cadastroDeNinja.ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class MissaoModel {
 
     // @OneToMany - Uma missão pode ter vários ninjas
     @OneToMany(mappedBy = "missao")
+    @JsonIgnore
     private List<NinjaModel> ninjas;
 
 }
