@@ -28,4 +28,8 @@ public class NinjaController {
         return ninjaService.findAllNinjas();
     }
 
+    @GetMapping("/ninjas/{id}")
+    public Optional<NinjaModel> findNinjaById(@PathVariable Long id ) {
+        return ninjaService.findNinjaById(id);
+    }
 }
